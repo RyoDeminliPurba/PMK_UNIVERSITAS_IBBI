@@ -45,3 +45,6 @@ Route::get('/peserta/detail',[PesertaController::class,'tampil_detail_peserta'])
 
 Route::get('absensi/form',[AbsensiController::class,'tampil_form_absensi'])
     ->name("absensi.form");
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

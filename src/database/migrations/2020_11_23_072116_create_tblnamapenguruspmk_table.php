@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTblpertemuanTable extends Migration
+class CreateTblnamapenguruspmkTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateTblpertemuanTable extends Migration
      */
     public function up()
     {
-        Schema::create('tblpertemuan', function (Blueprint $table) {
+        Schema::create('tblnamapenguruspmk', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("kelas_id");
-            $table->foreign("kelas_id")->references("id")->on("tblkelas");
-            $table->date("tanggal");
-            $table->String("kode",8);
+            $table->string("nama pengurus");
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateTblpertemuanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tblpertemuan');
+        Schema::dropIfExists('tblnamapenguruspmk');
     }
 }
