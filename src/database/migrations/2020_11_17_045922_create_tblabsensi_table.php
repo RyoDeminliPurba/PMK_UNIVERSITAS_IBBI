@@ -16,8 +16,8 @@ class CreateTblabsensiTable extends Migration
         Schema::create('tblabsensi', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("pertemuan_id");
-            $table->foreign("pertemuan_id")->references("id")->on("tblpertemuan");
             $table->unsignedBigInteger("mahasiswa_id");
+            $table->foreign("pertemuan_id")->references("id")->on("tblpertemuan");
             $table->foreign("mahasiswa_id")->references("id")->on("users");
             $table->enum("status",["absen","hadir","izin","sakit"]);
             $table->timestamps();

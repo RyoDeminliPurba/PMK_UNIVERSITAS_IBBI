@@ -15,9 +15,6 @@ class CreateTblkelasTable extends Migration
     {
         Schema::create('tblkelas', function (Blueprint $table) {
             $table->id();
-            // dia buat kolom id tipe unsigned bigint
-            // dia buat kolom id auto increment
-            // dia buat kolom id primary key
             $table->string("nama",100);
             $table->string("matakuliah",100);
             $table->string("noruang",3);

@@ -18,7 +18,7 @@ class CreateTblpertemuanTable extends Migration
             $table->unsignedBigInteger("kelas_id");
             $table->foreign("kelas_id")->references("id")->on("tblkelas");
             $table->date("tanggal");
-            $table->string("kode",8);
+            $table->String("kode",8);
             $table->timestamps();
         });
     }
