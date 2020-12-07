@@ -33,7 +33,7 @@ services:
     volumes: 
       - mysql_data:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: dbabsensi
+      MYSQL_DATABASE: dbpmk
       MYSQL_USER: Ryo_Purba
       MYSQL_PASSWORD: 29041998
       MYSQL_ROOT_PASSWORD: 29041998

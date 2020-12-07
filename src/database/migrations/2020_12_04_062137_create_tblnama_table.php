@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTblkegiatanpmkTable extends Migration
+class CreateTblnamaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateTblkegiatanpmkTable extends Migration
      */
     public function up()
     {
-        Schema::create('tblkegiatanpmk', function (Blueprint $table) {
+        Schema::create('tblnama', function (Blueprint $table) {
             $table->id();
-            $table->string("Pemuridan");
-            $table->string("Doa Puasa");
-            $table->string("Ibadah Raya PMK");
-            $table->string("Reat-Reat PMK");
-            $table->string("Ibadah Paskah");
+            $table->string("nama",50);
+            $table->enum('JENIS KELAMIN', ["LAKI LAKI","PEREMPUAN"]);
+            $table->date("tgllahir");
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateTblkegiatanpmkTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tblkegiatanpmk');
+        Schema::dropIfExists('tblnama');
     }
 }

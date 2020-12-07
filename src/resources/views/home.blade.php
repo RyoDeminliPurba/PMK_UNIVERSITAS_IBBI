@@ -1,23 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="container">
+        <a href="{{ route("nama.form") }}" class="btn btn-success float-right mb-4"><i class="fas fa-plus"></i> Buat Daftar Baru</a>
+        <div class="clearfix"></div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <div class="row">
+     <div class="col-md-3 ">
+     <div class="card">
+        <div class="card-header"></div>
+        <div class="card-header bg-primary text-white">
+        <h5>PMK UNIVERSITAS IBBI</H5>
+     </div>
+     <div class="card-body">
+     PMK adalah salah satu organisasi yang ada di UNIVERSITAS IBBI Medan dimana organisasi ini bertujuan atau bergerak di bidang kerohanian
+     Kristen.     </div>
+     
+     <div class="card-footer">
+     
+        <a href="#"class ="btn-danger float-right"><i class="fas fa-trash"></i>Hapus</a>
+        
+     <div>
+    
+     </div>
+     
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
