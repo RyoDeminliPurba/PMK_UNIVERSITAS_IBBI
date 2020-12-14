@@ -16,7 +16,9 @@ class CreateTblnamaTable extends Migration
         Schema::create('tblnama', function (Blueprint $table) {
             $table->id();
             $table->string("Nama",50);
-            $table->enum('JENIS KELAMIN', ["LAKI LAKI","PEREMPUAN"]);
+            $table->enum('JENIS KELAMIN', ['LAKI LAKI','PEREMPUAN']);
+            $table->enum('JURUSAN', ['TEKNIK INFORMATIKA','SISTEM INFORMASI','AKUTANSI','MANAJEMEN']);
+            $table->year('TAHUN ANGKATAN');
             $table->date("tgllahir");
             $table->timestamps();
         });

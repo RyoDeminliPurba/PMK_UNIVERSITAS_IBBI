@@ -24,3 +24,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('nama/form',[App\Http\Controllers\NamaController::class,'tampilform'])->name("nama.form");
 Route::post('nama/create', [App\Http\Controllers\NamaController::class,'createform'])->name("nama.create");
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

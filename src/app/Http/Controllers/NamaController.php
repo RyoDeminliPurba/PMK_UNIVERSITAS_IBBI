@@ -15,6 +15,8 @@ class NamaController extends Controller
         \App\Models\Nama::create([
         "nama" => $request->nama,
             "JENIS KELAMIN" =>$request->jeniskelamin,
+            "JURUSAN"=>$request->JURUSAN,
+            "TAHUN ANGKATAN"=>$request->tahunangkatan,
             "tgllahir" =>$request->tanggallahir
         ]);
             return view("home");   
