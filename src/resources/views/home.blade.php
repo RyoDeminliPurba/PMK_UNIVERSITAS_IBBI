@@ -14,7 +14,7 @@
                     Situs website PMK IBBI dapat membantu menyimpan biodata kepengurusan organisasi PMK UNIVERSITAS IBBI
                     </div>
                         <div class="card-footer">     
-                        <a href="#"class ="btn-danger float-right"><i class="fas fa-trash"></i>Hapus</a>
+                        <a href="#"class ="btn btn-danger float-right"><i class="fas fa-trash"></i>Hapus</a>
                         </div>
             </div>
 
@@ -26,7 +26,7 @@
                     Dan melalui situs ini juga dapat menyimpan ataupun sebagai sarana penyimpanan kegiatan PMK UNIVERSITAS IBBI
                     </div>
                         <div class="card-footer">     
-                        <a href="#"class ="btn-danger float-right"><i class="fas fa-trash"></i>Hapus</a>
+                        <a href="#"class ="btn btn-danger float-right"><i class="fas fa-trash"></i>Hapus</a>
                         </div>
             </div>
             <div class="col-md-4">
@@ -37,7 +37,7 @@
                      Situs website ini juga bertujuan mempermudah pengurus Organisasi IBBI dalam pengisian biodata
                     </div>
                         <div class="card-footer">     
-                        <a href="#"class ="btn-danger float-right"><i class="fas fa-trash"></i>Hapus</a>
+                        <a href="#"class ="btn btn-danger float-right"><i class="fas fa-trash"></i>Hapus</a>
                         </div>
             </div>
             <div class="col-md-4">
@@ -48,7 +48,7 @@
                     Melalui situs website ini di harapkan dapat mempermudah kegiatan organisasi PMK UNIVERSITAS IBBI
                     </div>
                         <div class="card-footer">     
-                        <a href="#"class ="btn-danger float-right"><i class="fas fa-trash"></i>Hapus</a>
+                        <a href="#"class ="btn btn-danger float-right"><i class="fas fa-trash"></i>Hapus</a>
                         </div>
             </div>
         </div>
