@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/Home/Hapus/{id}',[HomeController::class,'HapusHome'])->name("Home.Hapus");
 
 
 Route::get('nama/form',[App\Http\Controllers\NamaController::class,'tampilform'])->name("nama.form");

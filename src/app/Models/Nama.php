@@ -9,6 +9,6 @@ class Nama extends Model
 {
     use HasFactory;
      protected$table = "tblnama";
-     protected$fillable = ['nama','JENISKELAMIN','tgllahir'];
+     protected$fillable = ['nama','JENISKELAMIN','JURUSAN','TAHUNANGKATAN','tgllahir'];
 
 }

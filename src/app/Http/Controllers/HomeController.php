@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Home;
 class HomeController extends Controller
 {
     /**
@@ -25,4 +25,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
-}
+            public function HapusHome($id){
+            //hapus data home berdasarkan $id
+            App\Models\Home::destroy($id);
+
+        //setelah berhasil di hapus data home kembali ke halaman sebelumnnya
+            return view("home");
+            }
+ }

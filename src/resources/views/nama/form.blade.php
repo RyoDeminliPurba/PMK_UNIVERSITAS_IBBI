@@ -5,7 +5,7 @@
         <form action="{{ route("nama.create") }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nama">nama</label>
+                <label for="Nama">Nama</label>
                 <input type="text" 
                     class="form-control @error('nama') is-invalid @enderror" 
                     name="nama"
@@ -17,7 +17,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="jeniskelamin">jeniskelamin</label>
+                <label for="Jeniskelamin">Jenis Kelamin</label>
                 <input type="text" name="jeniskelamin" 
                     class="form-control @error('jeniskelamin') is-invalid @enderror"
                     value={{ old('jeniskelamin') }}>
@@ -28,45 +28,67 @@
                 @enderror
             </div>
             <div class="form-group row">
-            <label for="example-date-input" class="col-2 col-form-label">Tanggal lahir</label>
-            <div class="col-2">
-            <input type="dd/mm/yyy">
-            </>
-            </div>
+                <label for="example-date-input" class="col-6 col-form-label">Tanggal Lahir</label>
+                <div class="col-10">
+                  <input class="form-control" type="date" id="example-date-input" name="tanggallahir">
+                </div>
                 @error('tanggallahir')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>  
                 @enderror
-            </div>
-            <div class="form-group">
-                <label for="jurusan">jurusan</label>
-                <input type="text" 
-                    class="form-control @error('JURUSAN') is-invalid @enderror" 
-                    name="JURUSAN"
-                    value={{ old('JURUSAN')}}>
+              </div>
+              <div class="form-group">
+                  <label for="tahunangkatan">Tahun Angkatan</label>
+                  <input type="text" class="form-control" name="TAHUNANGKATAN">
+              </div>
+              <div class="form-group">
+                <label for="jurusan">Jurusan</label>
+                <select name="JURUSAN" class="form-control" id="">
+                    <option value="" selected>Masukkan Jurusan</option>
+                    <option value="1">TEKNIK INFORMATIKA</option>
+                    <option value="2">SISTEM INFORMASI</option>
+                    <option value="3">AKUNTANSI</option>
+                    <option value="4">MANAJEMEN</option>
+                </select>
                 @error('JURUSAN')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>  
-                @enderror
-            </div>
-            <div class="form-group">
-                <label for="tahun angkatan">tahun angkatan</label>
-                <input type="text" name="TAHUN ANGKATAN" 
-                    class="form-control @error('TAHUN ANGKATAN') is-invalid @enderror"
-                    value={{ old('TAHUN ANGKATAN') }}>
-                @error('TAHUN ANGKATAN')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                        </div>
-                        @enderror
+                <div class="invalid-feedback">
+                    {{ $message }}
                     </div>
-            <div class="form-group float-right">
-                <button type="submit" class="btn btn-success">
-                    <i class="fas fa-save"></i> Simpan</button>
-                <a href="{{ url()->previous() }}" class="btn btn-danger"><i class="fas fa-undo"></i> Batal </a>
-            </div>
+                    @enderror
+                </div>           
+                    <div class="form-group float-right">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> Simpan</button>
+                        <a href="{{ url()->previous() }}" class="btn btn-danger"><i class="fas fa-undo"></i> Batal </a>
+                    </div>
+                </div>
         </form>
+    </div>
+    <hr>
+    <div class="container-fluid">
+            <table class="table table-bordered">
+                <thead align="center">
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jurusan</th>
+                    <th>Angkatan</th>
+                    <th colspan="2">Action</th>
+                </thead>
+                <tbody align="center">
+                    @foreach ($Nama as $item)
+                <tr>
+                    <td>{{ $item -> Nama }}</td>
+                    <td>{{ $item -> JENISKELAMIN }}</td>
+                    <td>{{ $item -> JURUSAN}}</td>
+                    <td>{{ $item -> TAHUNANGKATAN}}</td>
+                    <td>{{ $item -> tgllahir}}</td>
+                    <td>Rubah</td>
+                    <td>Hapus</td>
+                </tr>
+                    @endforeach
+                </tbody>
+            </table>
     </div>
 @endsection

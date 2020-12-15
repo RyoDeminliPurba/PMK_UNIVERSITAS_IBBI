@@ -9,14 +9,15 @@ class NamaController extends Controller
 {
     //
     public function tampilform(){
-        return view("nama.form");
+        $Nama = Nama::all();
+        return view("nama.form",compact("Nama"));
     }
     public function createform(Request $request){
         \App\Models\Nama::create([
         "nama" => $request->nama,
             "JENIS KELAMIN" =>$request->jeniskelamin,
             "JURUSAN"=>$request->JURUSAN,
-            "TAHUN ANGKATAN"=>$request->tahunangkatan,
+            "TAHUNANGKATAN"=>$request->TAHUNANGKATAN,
             "tgllahir" =>$request->tanggallahir
         ]);
             return view("home");   
