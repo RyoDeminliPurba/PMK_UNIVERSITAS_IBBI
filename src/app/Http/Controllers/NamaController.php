@@ -7,19 +7,29 @@ use \App\Models\Nama;
 
 class NamaController extends Controller
 {
+    public function index(){
+        return view('nama',[
+            "nama" =>Nama::all()
+        ]);
+    }
     //
     public function tampilform(){
         $Nama = Nama::all();
-        return view("nama.form",compact("Nama"));
+        return view("formnama",compact("Nama"));
     }
     public function createform(Request $request){
-        \App\Models\Nama::create([
+        Nama::create([
         "nama" => $request->nama,
             "JENIS KELAMIN" =>$request->jeniskelamin,
             "JURUSAN"=>$request->JURUSAN,
             "TAHUNANGKATAN"=>$request->TAHUNANGKATAN,
             "tgllahir" =>$request->tanggallahir
         ]);
-            return view("home");   
+            return view("formnama");   
+    }
+    public function hapus($id){
+
+        \App\Models\Nama::destroy($id);
+        return redirect()->back();
     }
 }

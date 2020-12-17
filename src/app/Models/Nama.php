@@ -12,3 +12,7 @@ class Nama extends Model
      protected$fillable = ['nama','JENISKELAMIN','JURUSAN','TAHUNANGKATAN','tgllahir'];
 
 }
+
+       
+    
+    

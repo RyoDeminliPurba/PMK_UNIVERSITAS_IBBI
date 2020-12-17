@@ -17,6 +17,7 @@ class CreateTbljabatanTable extends Migration
             $table->id();
 
             $table->STRING("NAMA",100);
+            $table->enum('JURUSAN', ['TEKNIKINFORMATIKA','SISTEMINFORMASI','AKUTANSI','MANAJEMEN']);
             $table->enum('JABATAN', ["KETUA", "WAKIL","BENDAHARA","SEKRETARIS","ACARA","KEROHANIAN","HUMAS","MULTIMEDIA"]);
             $table->unsignedBigInteger("idnama");
             $table->foreign('idnama')->references('id')->on('tblnama');

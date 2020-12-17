@@ -1,60 +1,66 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary mb-4">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="home">BERANDA <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="formnama">NAMA PENGURUS</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="tentang">JABATAN</a>
+              </li>
+                
+            <li class="nav-item">
+              <a class="nav-link text-white" href="tentang">KEGIATAN</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+</div>
     <div class="container">
         <form action="{{ route("nama.create") }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="Nama">Nama</label>
                 <input type="text" 
-                    class="form-control @error('nama') is-invalid @enderror" 
+                    class="form-control" 
                     name="nama"
-                    value={{ old('nama')}}>
-                @error('nama')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>  
-                @enderror
+                    value="">
                 <div class="form-group">
                     <div class="form-group">
-                        <label for="jeniskelamin">jeniskelamin</label>
-                        <input type="text"name="jeniskelamin"class="form-control"placeholder="isi jenis kelamin p atau l"maxlength="1"
-                        value={{isset($data)?->jeniskelamin:""}}>
+                        <label for="JENISKELAMIN">JENISKELAMIN</label>
+                        <input type="text"name="JENISKELAMIN"class="form-control"placeholder="isi jenis kelamin p atau l"maxlength="1"
+                        value={{isset($data)?$data->JENISKELAMIN:""}}>
                     </div>
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                        </div>
-                        @enderror
+                    
                     </div>           
             <div class="form-group row">
                 <label for="example-date-input" class="col-6 col-form-label">Tanggal Lahir</label>
                 <div class="col-10">
                   <input class="form-control" type="date" id="example-date-input" name="tanggallahir">
                 </div>
-                @error('tanggallahir')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>  
-                @enderror
               </div>
               <div class="form-group">
                   <label for="tahunangkatan">Tahun Angkatan</label>
                   <input type="text" class="form-control" name="TAHUNANGKATAN">
-              </div>
+                </div>
               <div class="form-group">
                 <label for="jurusan">Jurusan</label>
                 <select name="JURUSAN" class="form-control" id="">
-                    <option value="" selected>Masukkan Jurusan</option>
-                    <option value="1">TEKNIK INFORMATIKA</option>
-                    <option value="2">SISTEM INFORMASI</option>
-                    <option value="3">AKUNTANSI</option>
-                    <option value="4">MANAJEMEN</option>
+                    <option value="TEKNIKINFORMATIKA">TEKNIK INFORMATIKA</option>
+                    <option value="SISTEMINFORMASI">SISTEM INFORMASI</option>
+                    <option value="AKUTANSI">AKUNTANSI</option>
+                    <option value="MANAJEMEN">MANAJEMEN</option>
                 </select>
-                @error('JURUSAN')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                    </div>
-                    @enderror
                 </div>           
                     <div class="form-group float-right">
                         <button type="submit" class="btn btn-success">
@@ -76,9 +82,9 @@
                     <th colspan="2">Action</th>
                 </thead>
                 <tbody align="center">
-                    @foreach ($Nama as $item)
+                    @foreach ($nama as $item)
                 <tr>
-                    <td>{{ $item -> Nama}}</td>
+                    <td>{{ $item -> Nama }}</td>
                     <td>{{ $item -> JENISKELAMIN }}</td>
                     <td>{{ $item -> tgllahir}}</td>
                     <td>{{ $item -> JURUSAN}}</td>
@@ -88,8 +94,10 @@
                         onclick="return confirm('Anda Yakin Hapus')"    
                         class="btn btn-danger"><i class="fas fa-undo"></i>Hapus</a></td>
                 </tr>
-                    @endforeach
+                @endforeach        
                 </tbody>
+                
             </table>
+            
     </div>
 @endsection

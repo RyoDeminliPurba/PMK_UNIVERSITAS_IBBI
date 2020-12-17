@@ -16,8 +16,11 @@ class CreateTblkegiatanTable extends Migration
         Schema::create('tblkegiatan', function (Blueprint $table) {
             $table->id();
             $table->STRING("NAMA",100);
+            $table->STRING("HARI",8);
+            $table->STRING("PUKUL",5);
             $table->enum('Kegiatan', ["Pemuridan", "Doa Puasa","Ibadah Raya PMK","Reat-Reat PMK","ACARA","Ibadah Paskah"]);
-        
+            $table->unsignedBigInteger("idnama");
+            $table->foreign('idnama')->references('id')->on('tblnama');
             $table->timestamps();
         });
     }

@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home',["pengenalan" => \App\Models\Pengenalan::all()]);
     }
             public function HapusHome($id){
             //hapus data home berdasarkan $id

@@ -15,6 +15,8 @@ class CreateTblnamaTable extends Migration
     {
         Schema::create('tblnama', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('kodenama');
+            $table->foreign('kodenama')->references('id')->on('users');
             $table->string("Nama",50);
             $table->enum('JENISKELAMIN', ['LAKI LAKI','PEREMPUAN']);
             $table->enum('JURUSAN', ['TEKNIKINFORMATIKA','SISTEMINFORMASI','AKUTANSI','MANAJEMEN']);
