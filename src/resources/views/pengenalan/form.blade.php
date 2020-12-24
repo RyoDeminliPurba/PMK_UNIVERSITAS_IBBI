@@ -6,7 +6,9 @@
             @csrf
               <div class="form-group">
                   <label for="pengenalan">Pengenalan PMK</label>
-                  <input type="text" class="form-control" name="pengenalan">
+                  <input type="text" class="form-control" name="pengenalan"
+                  value={{old('pengenalan') }}>
+                
                 </div>
                   
                     <div class="form-group float-right">

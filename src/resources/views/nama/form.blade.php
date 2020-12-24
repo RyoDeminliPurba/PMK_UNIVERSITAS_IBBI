@@ -16,11 +16,11 @@
                     </div>  
                 @enderror
                 <div class="form-group">
-                    <div class="form-group">
-                        <label for="jeniskelamin">jeniskelamin</label>
-                        <input type="text"name="jeniskelamin"class="form-control"placeholder="isi jenis kelamin p atau l"maxlength="1"
-                        value={{isset($data)?->jeniskelamin:""}}>
-                    </div>
+                   <div class="form-group">
+                     <label for="jeniskelamin">Jenis Kelamin</label>
+                    <input type="text" name="jeniskelamin" class="form-control" placeholder="isi jenis kelamin p atau l" maxlength="1"
+                        value={{  isset($data)?$data->jeniskelamin:""}}>
+                        </div>
                     <div class="invalid-feedback">
                         {{ $message }}
                         </div>

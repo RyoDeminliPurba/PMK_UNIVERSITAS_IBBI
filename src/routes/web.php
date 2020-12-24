@@ -24,13 +24,15 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth']], function () {
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/Home/Hapus/{id}',[HomeController::class,'HapusHome'])->name("Home.Hapus");
 
 
 Route::get('formnama',[App\Http\Controllers\NamaController::class,'tampilform'])->name("formnama");
 Route::post('nama/create', [App\Http\Controllers\NamaController::class,'createform'])->name("nama.create");
-Route::get('nama/hapus/{id}',[App\Http\Controllers\NamaController::class,'hapus'])->name("hapus.nama");
+Route::get('formnama/hapus/{id}',[App\Http\Controllers\NamaController::class,'hapus'])->name("hapus.nama");
 
 
 Auth::routes();
@@ -45,5 +47,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/Pengenalan/form',[JabatanController::class,'tampilform'])->name("jabatan.form");
+
+    
+});
+
+
 
 

@@ -82,7 +82,7 @@
                     <th colspan="2">Action</th>
                 </thead>
                 <tbody align="center">
-                    @foreach ($nama as $item)
+                    @foreach ($Nama as $item)
                 <tr>
                     <td>{{ $item -> Nama }}</td>
                     <td>{{ $item -> JENISKELAMIN }}</td>
